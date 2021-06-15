@@ -1,10 +1,10 @@
 import React ,{ useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Form, Button} from 'react-bootstrap';
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import makeToast from '../../../User/User/Toaster';
 import axios from 'axios';
-import { useForm } from "react-hook-form";
+
 import './Challenges.css'
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
@@ -15,17 +15,17 @@ const initialValues = {
 
 }       
 
-const validate = values => {
-  let errors = {}
-  if(!values.title) {
-    errors.title = 'Required'
-  }
-  if(!values.description) {
-    errors.description = 'Required'
-  }
+// const validate = values => {
+//   let errors = {}
+//   if(!values.title) {
+//     errors.title = 'Required'
+//   }
+//   if(!values.description) {
+//     errors.description = 'Required'
+//   }
   
-    return errors 
-  }
+//     return errors 
+//   }
   const validationSchema = Yup.object({
     title:Yup.string().required('This field is required'),
     description:Yup.string().min(30,'Enter minimum 30 words').required('This field is required')
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 function AddChallenge() {
     const classes = useStyles();
-    const { register, handleSubmit ,formState:{errors}} = useForm();
+    
     const [challenge, setChallenge] = useState({
       title:"",
       description:""
@@ -77,23 +77,23 @@ function AddChallenge() {
       const token = localStorage.getItem("admin_token");
     if (!token) history.push('/admin/login')
       // es  {errors.lastName && <p>Last name is required.</p>}lii
-    })
+    },[history])
     
-    function submit (e){
-      e.preventDefault()
-      console.log(e)
+    // function submit (e){
+    //   e.preventDefault()
+    //   console.log(e)
 
-      axios.post('/admin/add-challenge', challenge).then(response => {
-        makeToast("success",response.data.message);
-        history.push("/admin/challenges")
-      }).catch((err ) => {
+    //   axios.post('/admin/add-challenge', challenge).then(response => {
+    //     makeToast("success",response.data.message);
+    //     history.push("/admin/challenges")
+    //   }).catch((err ) => {
        
-        console.log(err.response)
+    //     console.log(err.response)
       
-        if(err.response.data.message) makeToast("error",err.response.data.message)
-        if(err.response.data.message) makeToast("error",err.response.data.message)
-      })
-    }
+    //     if(err.response.data.message) makeToast("error",err.response.data.message)
+    //     if(err.response.data.message) makeToast("error",err.response.data.message)
+    //   })
+    // }
     
   function onChange(e) {
      setChallenge({

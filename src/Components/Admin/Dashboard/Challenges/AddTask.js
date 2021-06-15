@@ -1,41 +1,41 @@
-import  React, { useState, useEffect, createContext} from "react";
+import  React, { useState} from "react";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import {Form, Button as BootstrapButton} from 'react-bootstrap';
-import { Link, useHistory, useParams } from "react-router-dom";
+import {Form} from 'react-bootstrap';
+import {  useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-import { MDBDataTableV5 } from "mdbreact";
+
 import makeToast from "../../../User/User/Toaster";
 
-import { useFormik } from 'formik';
+// import { useFormik } from 'formik';
 import AddTest from "./AddTest";
 
-const initialValues = {
-  name:'',
-  email:'',
-  password:'',
+// const initialValues = {
+//   name:'',
+//   email:'',
+//   password:'',
 
-}       
-const onSubmit = values => {
-  console.log('form data', values)
-}
-const validate = values => {
-  let errors = {}
-  if(!values.name) {
-    errors.name = 'Required'
-  }
-  if(!values.email) {
-    errors.email = 'Required'
-  }
-  else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email)) {
-    errors.email = 'Invalid email format'
-    }
-    if(!values.password) {
-      errors.password = 'Required'
-    }
-    return errors 
-  }
+// }       
+// const onSubmit = values => {
+//   console.log('form data', values)
+// }
+// const validate = values => {
+//   let errors = {}
+//   if(!values.name) {
+//     errors.name = 'Required'
+//   }
+//   if(!values.email) {
+//     errors.email = 'Required'
+//   }
+//   else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(values.email)) {
+//     errors.email = 'Invalid email format'
+//     }
+//     if(!values.password) {
+//       errors.password = 'Required'
+//     }
+//     return errors 
+//   }
 
 
 const useStyles = makeStyles((theme) => ({
@@ -58,12 +58,12 @@ export default function Basic() {
   const { id }  = useParams()
   const [taskId, setTaskId] = useState('')
   const [hide, setHide] = useState(true)
-  const SubmitContext = createContext(false)
-  const formik = useFormik({
-    initialValues,
-    onSubmit,
-     validate
-  })
+  // const SubmitContext = createContext(false)
+  // const formik = useFormik({
+  //   initialValues,
+  //   onSubmit,
+  //    validate
+  // })
   const [task, setTask] = useState({
     challengeId:id
   });
@@ -103,23 +103,23 @@ function onChange(e) {
    })
   
   }
-  function testOnChange(e) {
-    console.log(test)
-    setTest({
-      ...test,
-      [e.target.name]:e.target.value
-    })
-   }
-  function testSubmit (e) {
-    e.preventDefault()
-    axios.post('/admin/add-testCase',test).then((response) => {
-      makeToast("success","test succesfully added")
-      history.push('/admin/challenges')
-    }).
-    catch((err) => {
-      console.log(err)
-    })
-  }
+  // function testOnChange(e) {
+  //   console.log(test)
+  //   setTest({
+  //     ...test,
+  //     [e.target.name]:e.target.value
+  //   })
+  //  }
+  // function testSubmit (e) {
+  //   e.preventDefault()
+  //   axios.post('/admin/add-testCase',test).then((response) => {
+  //     makeToast("success","test succesfully added")
+  //     history.push('/admin/challenges')
+  //   }).
+  //   catch((err) => {
+  //     console.log(err)
+  //   })
+  // }
 function proceed() {
   makeToast("success", "Task Added Successfully")
   history.push('/admin/challenges')
