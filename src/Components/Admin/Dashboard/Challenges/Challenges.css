@@ -1,0 +1,14 @@
+.task-div {
+    background: #e7eeef;
+}
+.error {
+    color: red;
+}
+.test-case-font {
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0;
+    letter-spacing: 0;
+    font-size: 26px;
+    line-height: 1.4;
+}

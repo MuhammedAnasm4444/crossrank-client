@@ -1,0 +1,18 @@
+.task-main-div {
+    background:#e7eeef;
+    overflow-x: hidden;
+
+}
+.task-title-div {
+    background: #fff;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+
+}
+
+.card-div :hover {
+    background: rgb(227, 240, 227);
+    color: rgb(48, 46, 46);
+}
+.challenge-div-image {
+    width: 205px;
+}
