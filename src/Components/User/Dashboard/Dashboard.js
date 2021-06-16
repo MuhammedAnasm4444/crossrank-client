@@ -23,7 +23,7 @@ function Dashboard() {
     try {
       console.log("entering fjdkjafk jkjk jaxiosggg")
     
-      axios.get("http://localhost:8000/admin/challenges").then((res) => {
+      axios.get("/admin/challenges").then((res) => {
         console.log(res.data)
         console.log("dd")
         setChallenges([])
