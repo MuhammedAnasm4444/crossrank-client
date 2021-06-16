@@ -23,7 +23,7 @@ function Dashboard() {
     try {
       console.log("entering fjdkjafk jkjk jaxiosggg")
     
-      axios.get("http://34.122.147.138:8080/admin/challenges").then((res) => {
+      axios.get("https://ycart.tk/admin/challenges").then((res) => {
         console.log(res.data)
         console.log("dd")
         setChallenges(res.data)
