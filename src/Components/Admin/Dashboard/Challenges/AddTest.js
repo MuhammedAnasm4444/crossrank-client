@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button as BootstrapButton } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import makeToast from "../../../User/User/Toaster";
@@ -27,15 +27,15 @@ function AddTest(props) {
       ...test,
       ...props,
     });
-  }, [props]);
+  }, [props,test]);
 
-  function testOnChange(e) {
-    console.log(test);
-    setTest({
-      ...test,
-      [e.target.name]: e.target.value,
-    });
-  }
+  // function testOnChange(e) {
+  //   console.log(test);
+  //   setTest({
+  //     ...test,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // }
   const formik = useFormik({
     initialValues,
     onSubmit,

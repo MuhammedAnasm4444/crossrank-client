@@ -1,9 +1,9 @@
 import  React, {useState, useEffect} from "react";
-import {
-  DataGrid,
-  gridColumnsTotalWidthSelector,
-} from "@material-ui/data-grid";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+// import {
+//   DataGrid,
+//   gridColumnsTotalWidthSelector,
+// } from "@material-ui/data-grid";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Basic() {
   const classes = useStyles();
   const history = useHistory();
-  const [val, setVal] = useState('0')
-  var data;
+  const val = '0'
+  // var data;
   const [datatable, setDatatable] = useState({
     columns: [
       {
@@ -127,7 +127,7 @@ export default function Basic() {
         item.buttonEdit = (
           <Button
             onClick={() => {
-              editPage(item._id);
+             return editPage(item._id);
             }}
              size="small"
             variant="contained"
@@ -142,7 +142,7 @@ export default function Basic() {
             variant="contained"
             color="secondary"
             onClick={() => {
-              onCancel(item._id);
+              return onCancel(item._id);
             }}
           >
             Remove
@@ -152,7 +152,7 @@ export default function Basic() {
           <Button
             onClick={() => {
               console.log(datatable)
-              viewPage(item._id);
+             return viewPage(item._id);
             }}
             size="small"
             variant="outlined"

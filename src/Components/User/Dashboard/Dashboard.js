@@ -19,16 +19,11 @@ function Dashboard() {
     username = decoded.name;
   }
 
-  useEffect(async() => {
+  useEffect(() => {
     try {
       console.log("entering fjdkjafk jkjk jaxiosggg")
-    //   const res = await fetch('https://api-dot-chrome-orb-316710.ue.r.appspot.com/admin/challenges')
-    // const data = await res.json()
-    // console.log("ahaa it worked")
-    // // setUsers(data.data)
-    // console.log(data.data)
-    // setChallenges(data)
-      axios.get("/admin/challenges").then((res) => {
+    
+      axios.get("http://localhost:8000/admin/challenges").then((res) => {
         console.log(res.data)
         console.log("haiddd")
         setChallenges(res.data)
