@@ -25,8 +25,8 @@ function Dashboard() {
     
       axios.get("http://localhost:8000/admin/challenges").then((res) => {
         console.log(res.data)
-        console.log("haiddd")
-        setChallenges(res.data)
+        console.log("dd")
+        setChallenges([])
       }).catch((err)=> {
         console.log(err)
         console.log("error not working")
