@@ -12,7 +12,7 @@ function Challenge() {
   const {state} = useContext(AuthContext)
   const taskDiv = data.tasks.map((task) => (
    
-      <Link to={"/challenge/task/?taskId="+task._id+"&challengeId="+id} key={task._id}>
+      <Link to={"https://ycart.tk/challenge/task/?taskId="+task._id+"&challengeId="+id} key={task._id}>
     <div className="card-div" >
       <div className=" task-div p-4  mb-5 row">
         <h2 className="font-weight-bolder">{task.title}</h2>
