@@ -75,7 +75,7 @@ export default function Basic() {
   function submit(e){
     e.preventDefault()
     axios.post('https://ycart.tk/admin/add-task' , task).then(response => {
-      makeToast("success",response.data.message.challenge);
+      makeToast("success",response.data.message);
       console.log(response.data)
       setTest({
         ...test,

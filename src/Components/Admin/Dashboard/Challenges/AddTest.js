@@ -20,15 +20,16 @@ const validationSchema = Yup.object({
 });
 
 function AddTest(props) {
-  const [test, setTest] = useState(props);
+  const [test, setTest] = useState({count:props.count,taskId:props.taskId,challengeId:props.challengeId});
   const [show, setShow] = useState(false);
   useEffect(() => {
+    console.log("Hai")
     setTest({
       ...test,
       ...props,
     });
-    setShow(true)
-  }, []);
+  
+  }, [props]);
 
   // function testOnChange(e) {
   //   console.log(test);
