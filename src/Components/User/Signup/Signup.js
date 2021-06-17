@@ -62,7 +62,7 @@ export default function SignIn(props) {
   
   function submit (e){
     e.preventDefault()
-    axios.post("/signup",signup).then(response => {
+    axios.post("http://localhost:8000/signup",signup).then(response => {
       makeToast("success",response.data.message);
       history.push('/login')
     }).catch((err ) => {

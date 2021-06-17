@@ -27,7 +27,8 @@ function AddTest(props) {
       ...test,
       ...props,
     });
-  }, [props,test]);
+    setShow(true)
+  }, []);
 
   // function testOnChange(e) {
   //   console.log(test);
