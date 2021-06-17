@@ -76,7 +76,7 @@ export default function DataTable() {
     const classes = useStyles();
     const [rows, setRows] = useState([])
     useEffect(() => {
-      axios.get('/admin/get-users').then((res) => {
+      axios.get('https://ycart.tk/admin/get-users').then((res) => {
         console.log(res)
         console.log(res.data[0]);
         

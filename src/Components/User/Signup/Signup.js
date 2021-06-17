@@ -108,7 +108,7 @@ function onChange(e) {
             type="text"
             name="name"
             autoComplete="name"
-            onChange={onChange}
+              onChange={onChange}
 
             autoFocus
           />

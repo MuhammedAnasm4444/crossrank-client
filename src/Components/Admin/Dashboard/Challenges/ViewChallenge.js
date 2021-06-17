@@ -72,7 +72,7 @@ function ViewChallenge() {
     if (!token) history.push("/admin/login");
     else {
       axios
-        .get("/admin/get-challenge/" + id)
+        .get("https://ycart.tk/admin/get-challenge/" + id)
         .then((response) => {
           console.log(response.data);
           var data = response.data;
