@@ -14,7 +14,7 @@ function Blog() {
   const {state} = useContext(AuthContext)
 
   useEffect(() => {
-    axios.get('/get-blog/'+id).then((response) => {
+    axios.get('https://ycart.tk/get-blog/'+id).then((response) => {
 
       setBlog(response.data)
       

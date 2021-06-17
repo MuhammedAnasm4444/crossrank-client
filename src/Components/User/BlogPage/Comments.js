@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Collapsible from 'react-collapsible';
 import './BlogPage.css';
 import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:8000";
+const ENDPOINT = "https://ycart.tk";
 
 const useStyles = makeStyles((theme) => ({
     typography: {

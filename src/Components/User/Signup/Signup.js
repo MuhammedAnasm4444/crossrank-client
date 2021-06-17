@@ -43,7 +43,7 @@ export default function SignIn(props) {
   const [signup, setSignup] = useState();
   const history = useHistory()
   const handleLogin = async googleData => {
-  const res = await fetch("/signup/google", {
+  const res = await fetch("https://ycart.tk/signup/google", {
       method: "POST",
       body: JSON.stringify({
       token: googleData.tokenId

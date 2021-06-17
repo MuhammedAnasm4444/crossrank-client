@@ -85,7 +85,7 @@ function Task(props) {
     console.log("hai")
     console.log(state)
     axios
-      .get("/admin/get-task/?taskId=" + taskId + "&challengeId=" + challengeId)
+      .get("https://ycart.tk/admin/get-task/?taskId=" + taskId + "&challengeId=" + challengeId)
       .then((response) => {
         setTasks(response.data.task);
         setChallenge(response.data.challenge);

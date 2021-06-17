@@ -9,7 +9,7 @@ import CommentBox from "./CommentBox";
 
 import { AuthContext } from "../User/User";
 import Comments from "./Comments";
-const ENDPOINT = "http://127.0.0.1:8000";
+const ENDPOINT = "https://ycart.tk";
 
 
 function BlogPage() {
