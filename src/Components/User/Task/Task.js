@@ -129,7 +129,7 @@ function Task(props) {
       point:point,
       status:status
     }
-    axios.post("/add-submission", submission)
+    axios.post("https://ycart.tk/add-submission", submission)
     .then((response) => {
       console.log(response)
     
@@ -155,7 +155,7 @@ function Task(props) {
       alert("you hadn't written any code");
     } else {
       axios
-        .post("/admin/submit-code", output)
+        .post("https://ycart.tk/admin/submit-code", output)
         .then((response) => {
           console.log(response);
           setOutputValue(response.data.test);

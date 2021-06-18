@@ -12,7 +12,7 @@ function Challenge() {
   const {state} = useContext(AuthContext)
   const taskDiv = data.tasks.map((task) => (
    
-      <Link to={"https://ycart.tk/challenge/task/?taskId="+task._id+"&challengeId="+id} key={task._id}>
+      <Link to={"/challenge/task/?taskId="+task._id+"&challengeId="+id} key={task._id}>
     <div className="card-div" >
       <div className=" task-div p-4  mb-5 row">
         <h2 className="font-weight-bolder">{task.title}</h2>
@@ -31,7 +31,7 @@ function Challenge() {
     //   history.push("/");
     // }
     
-    axios.get("/admin/get-challenge/" + id).then((res) => {
+    axios.get("https://ycart.tk/admin/get-challenge/" + id).then((res) => {
       console.log(res.data);
       setData(res.data);
     });
