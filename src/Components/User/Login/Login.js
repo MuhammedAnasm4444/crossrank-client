@@ -45,6 +45,7 @@ export default function SignIn() {
   const { dispatch } = useContext(AuthContext);
   function submit (e){
     e.preventDefault()
+    console.log("logging")
     axios.post('https://ycart.tk/login',login).then(response => {
       makeToast("success",response.data.message);
       console.log(response.data)
