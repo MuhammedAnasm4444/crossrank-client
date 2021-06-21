@@ -77,7 +77,7 @@ function Task(props) {
   const [show, setShow] = useState(true)
   const [challenge, setChallenge] = useState({ language: "",taskId:""});
   const [attempts, setAttempts]  = useState(0)
-  const [language, setLanguage] = useState('python3')
+  const [language, setLanguage] = useState('python')
   const [output, setOutput] = useState({taskId:taskId,language:"",script:""});
   const [open, setOpen] = useState(false);
   const classes = useStyles();
@@ -133,6 +133,8 @@ function Task(props) {
     .then((response) => {
       console.log(response)
     
+    }).catch((err) => {
+      console.log(err)
     })
   }
   const renderer = ({ hours, minutes, seconds, completed }) => {
