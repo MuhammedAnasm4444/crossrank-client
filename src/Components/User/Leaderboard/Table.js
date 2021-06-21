@@ -131,6 +131,7 @@ export default function CustomPaginationActionsTable() {
 
   useEffect(() => {
     axios.get('https://ycart.tk/leaderboard').then((response) => {
+      console.log(response)
       setRows(response.data)
     })
     .catch((err) => {
