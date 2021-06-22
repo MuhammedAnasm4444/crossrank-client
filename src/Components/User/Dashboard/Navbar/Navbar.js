@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -130,11 +131,12 @@ export default function PrimarySearchAppBar(props) {
     }
     else {
       return (
-        <div> <IconButton aria-label="show 4 new mails" color="inherit">
+        <div> <LinkRouter to={"/user-profile/"+state.id}><IconButton aria-label="show 4 new mails" style={{color:'white'}}>
         <Badge color="secondary">
-          <MailIcon />
+          <AccountCircle  />
         </Badge>
       </IconButton>
+      </LinkRouter>
       <IconButton aria-label="show 17 new notifications" color="inherit">
         <Badge color="secondary">
           <NotificationsIcon />
@@ -149,7 +151,7 @@ export default function PrimarySearchAppBar(props) {
         onClick={handleProfileMenuOpen}
         color="inherit"
       >
-        <AccountCircle />
+ <MoreVertIcon />
       </IconButton></div>
       )
     }
@@ -159,13 +161,16 @@ export default function PrimarySearchAppBar(props) {
   };
 
   const handleMobileMenuClose = () => {
+  
+    setMobileMoreAnchorEl(null);
+  };
+  const logout = () => {
     dispatch({
       type: "LOGOUT",
    
   })
     localStorage.removeItem('user_token');
     history.push('/')
-    setMobileMoreAnchorEl(null);
   };
 
   const handleMenuClose = () => {
@@ -189,7 +194,7 @@ export default function PrimarySearchAppBar(props) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>{props.name}</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+      <MenuItem onClick={logout}>Logout</MenuItem>
     </Menu>
   );
 
@@ -227,7 +232,8 @@ export default function PrimarySearchAppBar(props) {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+       < MoreVertIcon />
+         
         </IconButton>
         <p>{props.name}</p>
       </MenuItem>

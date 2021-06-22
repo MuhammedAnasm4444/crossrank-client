@@ -95,10 +95,10 @@ function UserProfile() {
 </Card>
   )
   
-  const testId = '60923466fc7fa3126f982598'
+ 
 
   useEffect(() =>{
-    axios.get('/user-profile/'+testId).
+    axios.get('/user-profile/'+state.id).
     then((response) =>{
       console.log(response.data)
       setUser(response.data.user)

@@ -157,7 +157,7 @@ function Task(props) {
       alert("you hadn't written any code");
     } else {
       axios
-        .post("https://ycart.tk/admin/submit-code", output)
+        .post("http://localhost:8000/admin/submit-code", output)
         .then((response) => {
           console.log(response);
           setOutputValue(response.data.test);
@@ -166,8 +166,6 @@ function Task(props) {
             setSubmission(true,output.point)
             setShow(false)
             setOpen(false)
-            
-
           }
           else {
             makeToast('error', response.data.message)

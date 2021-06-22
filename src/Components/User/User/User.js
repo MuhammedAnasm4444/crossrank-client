@@ -101,6 +101,10 @@ function User() {
                     <Navbar />
                     <UserProfile />
                 </Route>
+                <Route path="/user-profile">
+                    <Navbar />
+                    <UserProfile />
+                </Route>
                 <Route path='/blogs'>
                   <Navbar />
                   <BlogPage />
