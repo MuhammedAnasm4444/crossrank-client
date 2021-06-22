@@ -54,7 +54,7 @@ function AddBlog() {
     e.preventDefault()
     const socket = socketIOClient(ENDPOINT);
     
-    axios.post('/add-blog',login).then(response => {
+    axios.post('https://ycart.tk/add-blog',login).then(response => {
       makeToast("success",response.data.message);
       console.log(response.data)
       socket.emit("getBlogs")

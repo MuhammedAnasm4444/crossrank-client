@@ -100,7 +100,7 @@ function UserProfile() {
   useEffect(() =>{
     axios.get('https://ycart.tk/user-profile/'+state.id).
     then((response) =>{
-     
+     console.log(response.data.submissions)
       setUser(response.data.user)
       setSubmission(response.data.submissions)
       
