@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 function UserProfile() {
   const classes = useStyles();
   const { state } = useContext(AuthContext)
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({name:'',email:''})
   const [submission, setSubmission] = useState([])
   const [contest, setContest] = useState([])
   const [image, setImage] = useState({ preview: "", raw: "" });
