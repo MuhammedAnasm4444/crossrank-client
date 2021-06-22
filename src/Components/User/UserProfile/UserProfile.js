@@ -101,6 +101,7 @@ function UserProfile() {
     axios.get('https://ycart.tk/user-profile/'+state.id).
     then((response) =>{
      console.log(response.data.submissions)
+     console.log(response.data.user)
       setUser(response.data.user)
       setSubmission(response.data.submissions)
       
