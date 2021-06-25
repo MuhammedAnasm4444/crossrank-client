@@ -29,7 +29,7 @@ function Comments({blog, user, userId}) {
                   </div>
     )
     useEffect(() => {
-        const socket = socketIOClient(ENDPOINT,{query:{blog:blog}});
+        const socket = socketIOClient(ENDPOINT,{path:'/socket', query:{blog:blog}});
         console.log('comment'+blog)
         const obj = {
              blog:blog

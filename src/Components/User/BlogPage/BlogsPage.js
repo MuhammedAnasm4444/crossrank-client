@@ -6,10 +6,11 @@ import socketIOClient from "socket.io-client";
 import './BlogPage.css'
 import LikeButton from "./LikeButton";
 import CommentBox from "./CommentBox";
-
+// import axios from 'axios'
 import { AuthContext } from "../User/User";
 import Comments from "./Comments";
-const ENDPOINT = 'https://ycart.tk/socket';
+
+const ENDPOINT = 'https://ycart.tk';
 // const ENDPOINT  = 'http://localhost:8001';
 
 
@@ -66,7 +67,10 @@ function BlogPage() {
 
     useEffect(() => {
       console.log(ENDPOINT)
-      const socket = socketIOClient(ENDPOINT);
+      // axios.get('https://ycart.tk/socket').then((response) => {
+      //   console.log("hh")
+      // })
+      const socket = socketIOClient(ENDPOINT, {path:'/socket'});
       socket.emit("getBlogs",'hai')
       socket.on("getBlogs", data => {
           console.log(data)
