@@ -9,7 +9,7 @@ import Comments from "./Comments";
 
 import './BlogPage.css'
 // const URL =  'http://localhost:8000';
-const URL = 'https://ycart.tk/socket';
+const URL = 'https://ycart.tk';
 function Blog() {
   const { id }  = useParams()
   const [blog, setBlog] = useState({})
