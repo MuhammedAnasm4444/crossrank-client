@@ -17,7 +17,7 @@ import axios from 'axios';
 import makeToast from '../User/Toaster';
 import { AuthContext } from '../User/User';
 import socketIOClient from "socket.io-client";
-const ENDPOINT = "https://ycart.tk";
+const ENDPOINT = "https://ycart.tk/socket";
 
 const useStyles = makeStyles((theme) => ({
   paper: {

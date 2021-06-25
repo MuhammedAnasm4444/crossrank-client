@@ -8,13 +8,15 @@ import { AuthContext } from "../User/User";
 import Comments from "./Comments";
 
 import './BlogPage.css'
+// const URL =  'http://localhost:8000';
+const URL = 'https://ycart.tk/socket';
 function Blog() {
   const { id }  = useParams()
   const [blog, setBlog] = useState({})
   const {state} = useContext(AuthContext)
 
   useEffect(() => {
-    axios.get('https://ycart.tk/get-blog/'+id).then((response) => {
+    axios.get(URL+'/get-blog/'+id).then((response) => {
 
       setBlog(response.data)
       

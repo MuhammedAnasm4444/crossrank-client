@@ -9,7 +9,8 @@ import CommentBox from "./CommentBox";
 
 import { AuthContext } from "../User/User";
 import Comments from "./Comments";
-const ENDPOINT = "https://ycart.tk";
+const ENDPOINT = 'https://ycart.tk/socket';
+// const ENDPOINT  = 'http://localhost:8001';
 
 
 function BlogPage() {
