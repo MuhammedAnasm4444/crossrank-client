@@ -65,6 +65,7 @@ function BlogPage() {
     )
 
     useEffect(() => {
+      console.log(ENDPOINT)
       const socket = socketIOClient(ENDPOINT);
       socket.emit("getBlogs",'hai')
       socket.on("getBlogs", data => {
