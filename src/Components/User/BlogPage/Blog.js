@@ -17,7 +17,7 @@ function Blog() {
 
   useEffect(() => {
     axios.get(URL+'/get-blog/'+id).then((response) => {
-
+      console.log(URL+'/get-blog/'+id)
       setBlog(response.data)
       
     })
