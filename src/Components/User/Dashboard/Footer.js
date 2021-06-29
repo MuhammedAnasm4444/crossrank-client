@@ -2,9 +2,9 @@ import React from 'react'
 import './Dashboard.css'
 function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <p>Footer</p>
-        </div>
+        </footer>
     )
 }
 

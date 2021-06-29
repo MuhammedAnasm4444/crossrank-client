@@ -74,6 +74,7 @@ function User() {
             <Route path='/signup'  >
                 <Navbar />
                 <Signup />
+                
                 </Route>
             <Route path='/' exact component={Dashboard} />
             <Route path='/login' >

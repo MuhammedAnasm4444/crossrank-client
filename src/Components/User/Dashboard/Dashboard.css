@@ -20,11 +20,10 @@
   
 }
 .footer {
-    /* position: fixed; */
-    left: 0;
     bottom: 0;
+    position: absolute;
     width: 100%;
-    background-color: red;
+    background-color: cornflowerblue;
     color: white;
     text-align: center;
   }
