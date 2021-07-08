@@ -32,8 +32,6 @@ if(token) {
 }
 
   const reducer = (state, action) => {
-    console.log("reduceeeeeeeeeeeeeeeeeeeeeeeeeer")
-    console.log(action.payload)
     switch (action.type) {
       case "LOGIN":
         localStorage.setItem("user", action.payload.user.name);
@@ -90,10 +88,7 @@ function User() {
                 <Navbar />
                     <Challenge />
                     </ProtectedRoute>
-                {/* <Route path="/challenge/:id">
-                    <Navbar />
-                    <Challenge />
-                </Route> */}
+             
                 <ProtectedRoute path="/leaderboard">
                   <Navbar />
                   <Leaderboard />
@@ -102,10 +97,10 @@ function User() {
                     <Navbar />
                     <UserProfile />
                 </Route>
-                <Route path="/user-profile">
+                <ProtectedRoute path="/user-profile">
                     <Navbar />
                     <UserProfile />
-                </Route>
+                </ProtectedRoute>
                 <Route path='/blogs'>
                   <Navbar />
                   <BlogPage />

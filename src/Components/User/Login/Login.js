@@ -46,19 +46,28 @@ export default function SignIn() {
   function submit (e){
     e.preventDefault()
     console.log("logging")
-    axios.post('https://ycart.tk/login',login).then(response => {
-      makeToast("success",response.data.message);
-      console.log(response.data)
-      dispatch({
-        type: "LOGIN",
-        payload: response.data
-    })
+    axios.post('https://ycart.tk/login', login).then(response => {
+      if(response.data.message === "user Logged In"){
+        makeToast("success",response.data.message);
+        dispatch({
+          type: "LOGIN",
+          payload: response.data
+      })
+
+      }
+      
+      
+     
+   
       history.push("/")
     }).catch((err ) => {
-      if(err.response.data.email) makeToast("error", err.response.data.email)
-      if(err.response.data.emailNotFound) makeToast("error",err.response.data.emailNotFound)
-      if(err.response.data.message) makeToast("error",err.response.data.message)
-      if(err.response.data.passwordInCorrect)makeToast("error",err.response.data.passwordInCorrect)
+      
+      console.log("hkadfhkjhhjhf-----------")
+      console.log(err.message)
+      // if(err.response.data.email) makeToast("error", err.response.data.email)
+      // if(err.response.data.emailNotFound) makeToast("error",err.response.data.emailNotFound)
+      // if(err.response.data.message) makeToast("error",err.response.data.message)
+      // if(err.response.data.passwordInCorrect)makeToast("error",err.response.data.passwordInCorrect)
     })
   }
 function onChange(e) {

@@ -52,22 +52,17 @@ function Dashboard() {
   return (
     <div style={{background:"#F2F6F6"}}>
       <Navbar name={username} />
-      <div className='p-4 dashboard-header'>
+      <div className='p-4  dashboard-header'>
         <div className="container">
           <div className='row'>
           {/* <h2 className="dashboard-header-title">Home</h2> */}
           <h3 className="dashboard-header-title mx-auto"><span style={{color:'orange'}}>Learn</span> <span style={{color:'cornflowerblue'}}>Code</span> <span style={{color:'yellowgreen'}}>Upskill</span></h3>
           </div>
           </div>
-
       </div>
       <div className="container">
         <div className="row mt-4  p-2">
-
        {ChallengeList }
-
-        
-      
         </div>
       </div>
       <Footer />
