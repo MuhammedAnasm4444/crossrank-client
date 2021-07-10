@@ -63,14 +63,26 @@ export default function SignIn(props) {
   function submit (e){
     e.preventDefault()
     axios.post("https://ycart.tk/signup",signup).then(response => {
-      makeToast("success",response.data.message);
-      history.push('/login')
+      if(response.data.error) {
+      if(response.data.email) makeToast("error", response.data.email)
+      if(response.data.password) makeToast("error",response.data.password)
+      if(response.data.password2) makeToast("error",response.data.password2)
+      if(response.data.message) makeToast("error",response.data.message)
+
+      }
+      else {
+        makeToast("success", "Account Created");
+        history.push('/login')
+
+      }
+     
     }).catch((err ) => {
       console.log(err.response)
-      if(err.response.data.email) makeToast("error", err.response.data.email)
-      if(err.response.data.password) makeToast("error",err.response.data.password)
-      if(err.response.data.password2) makeToast("error",err.response.data.password2)
-      if(err.response.data.message) makeToast("error",err.response.data.message)
+      makeToast("error", "internal server error")
+      // if(err.response.data.email) makeToast("error", err.response.data.email)
+      // if(err.response.data.password) makeToast("error",err.response.data.password)
+      // if(err.response.data.password2) makeToast("error",err.response.data.password2)
+      // if(err.response.data.message) makeToast("error",err.response.data.message)
     })
   }
 function onChange(e) {
