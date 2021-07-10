@@ -45,12 +45,12 @@ export default function SignIn() {
   const { dispatch } = useContext(AuthContext);
   function submit (e){
     e.preventDefault()
-    console.log("logging")
+    console.log("logging 1")
     axios.post('https://ycart.tk/login', login,{
       headers:{
         Accept: 'application/json',
        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token // if you use token
+        
     }
     }).then(response => {
       if(response.data.message === "user Logged In"){
