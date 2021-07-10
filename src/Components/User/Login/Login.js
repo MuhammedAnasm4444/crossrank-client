@@ -46,12 +46,8 @@ export default function SignIn() {
   function submit (e){
     e.preventDefault()
     console.log("logging 1")
-    axios.post('https://ycart.tk/login', {withCredentials: true}, login,{
-      headers:{
-        Accept: 'application/json',
-        "Content-Type": "application/x-www-form-urlencoded",
-        
-    }
+    axios.post('https://ycart.tk/login',  login,{
+     
     }).then(response => {
       if(response.data.message === "user Logged In"){
         makeToast("success",response.data.message);
@@ -62,9 +58,14 @@ export default function SignIn() {
       history.push("/")
 
       }
-      else if(response.data.message==="") {
+      else if(response.data.error) {
+        if(response.data.email) makeToast("error", response.data.email)
+        if(response.data.emailNotFound) makeToast("error",response.data.emailNotFound)
+        if(response.data.message) makeToast("error",response.data.message)
+        if(response.data.passwordInCorrect)makeToast("error",response.data.passwordInCorrect)
 
       }
+      
       
       
      
@@ -73,6 +74,7 @@ export default function SignIn() {
     }).catch((err ) => {
       makeToast("error",'please try again')
       console.log(err.message)
+      console.log(err)
       // if(err.response.data.email) makeToast("error", err.response.data.email)
       // if(err.response.data.emailNotFound) makeToast("error",err.response.data.emailNotFound)
       // if(err.response.data.message) makeToast("error",err.response.data.message)
