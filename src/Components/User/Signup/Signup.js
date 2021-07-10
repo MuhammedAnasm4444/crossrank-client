@@ -67,7 +67,7 @@ export default function SignIn(props) {
       history.push('/login')
     }).catch((err ) => {
       console.log(err.response)
-      if(err.response.data.email) makeToast("erro", err.response.data.email)
+      if(err.response.data.email) makeToast("error", err.response.data.email)
       if(err.response.data.password) makeToast("error",err.response.data.password)
       if(err.response.data.password2) makeToast("error",err.response.data.password2)
       if(err.response.data.message) makeToast("error",err.response.data.message)
@@ -89,13 +89,14 @@ function onChange(e) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign Up  <GoogleLogin
+          Sign Up  
+          {/* <GoogleLogin
     clientId='6775234701-r2b5d9c9vqdjmpar5nhg5nfon5rcepo1.apps.googleusercontent.com'
     
     onSuccess={handleLogin}
     // onFailure={handleLogin}
     cookiePolicy={'single_host_origin'}
-/>
+/> */}
         </Typography>
         <form className={classes.form} onSubmit={submit}>
         <TextField

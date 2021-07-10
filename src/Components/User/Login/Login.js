@@ -46,23 +46,32 @@ export default function SignIn() {
   function submit (e){
     e.preventDefault()
     console.log("logging")
-    axios.post('https://ycart.tk/login', login).then(response => {
+    axios.post('https://ycart.tk/login', login,{
+      headers:{
+        Accept: 'application/json',
+       'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token // if you use token
+    }
+    }).then(response => {
       if(response.data.message === "user Logged In"){
         makeToast("success",response.data.message);
         dispatch({
           type: "LOGIN",
           payload: response.data
       })
+      history.push("/")
+
+      }
+      else if(response.data.message==="") {
 
       }
       
       
      
    
-      history.push("/")
-    }).catch((err ) => {
       
-      console.log("hkadfhkjhhjhf-----------")
+    }).catch((err ) => {
+      makeToast("error",'please try again')
       console.log(err.message)
       // if(err.response.data.email) makeToast("error", err.response.data.email)
       // if(err.response.data.emailNotFound) makeToast("error",err.response.data.emailNotFound)
@@ -115,10 +124,7 @@ function onChange(e) {
             onChange={onChange}
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+         
           <Button
             type="submit"
             fullWidth
@@ -126,18 +132,16 @@ function onChange(e) {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Login
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+               
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/signup" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+              
             </Grid>
           </Grid>
         </form>
