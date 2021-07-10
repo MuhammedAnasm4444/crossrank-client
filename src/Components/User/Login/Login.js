@@ -46,10 +46,10 @@ export default function SignIn() {
   function submit (e){
     e.preventDefault()
     console.log("logging 1")
-    axios.post('https://ycart.tk/login', login,{
+    axios.post('https://ycart.tk/login', {withCredentials: true}, login,{
       headers:{
         Accept: 'application/json',
-       'Content-Type': 'application/json',
+        "Content-Type": "application/x-www-form-urlencoded",
         
     }
     }).then(response => {
