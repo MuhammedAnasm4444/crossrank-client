@@ -49,7 +49,7 @@ export default function SignIn() {
     axios.post('https://ycart.tk/login',  login,{
      
     }).then(response => {
-      if(response.data.message === "user Logged In"){
+      if(response.data.message === "userLoggedIn"){
         makeToast("success",response.data.message);
         dispatch({
           type: "LOGIN",
