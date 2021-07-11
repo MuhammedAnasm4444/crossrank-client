@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     display: 'flex',
     width: '100$',
   transitionDuration: '0.3s',
-  height: '18vw'
+  height: 'auto'
   },
   cardDetails: {
     flex: 1,
@@ -40,10 +40,11 @@ export default function FeaturedPost(props) {
 
   return (
     <Grid item xs={12} md={6} >
+      <Link to={ChallengeUrl}>
       <CardActionArea  >
         <Card className={`m-3 ${classes.card}`}   >
-          <div className={classes.cardDetails}>
-            <CardContent>
+          <div className={` row ${classes.cardDetails}`}>
+            <CardContent className="">
               <Typography component="h2" variant="h5">
                 {/* {post.title} */}
                 <Box fontWeight="fontWeightBold" >
@@ -58,11 +59,11 @@ export default function FeaturedPost(props) {
                 {/* {post.description} */}
                 {description}
               </Typography>
-              <Link to={ChallengeUrl}>
+              
               <Typography variant="subtitle1" color="primary">
                Go to this Challenge Page
               </Typography>
-              </Link>
+              
             </CardContent>
           </div>
           <div className='img-background'>
@@ -73,6 +74,7 @@ export default function FeaturedPost(props) {
           </Hidden> */}
         </Card>
       </CardActionArea>
+      </Link>
     </Grid>
   );
 }

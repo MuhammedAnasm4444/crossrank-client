@@ -76,3 +76,8 @@ select.languages-select:focus > option:checked {
     border-radius: 19px;
     padding-top: 16px;
 }
+
+.editor-crossrank {
+    width: 800px;
+    height: 300px;
+}

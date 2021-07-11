@@ -196,7 +196,7 @@ function Task(props) {
         </div>
       </div>
       <div className="row ml-5 mt-5">
-        <div className="col-md-8 task-div p-4 pt-5">
+        <div className="col-10 col-md-8 task-div p-4 pt-5">
           <p className="font-weight-bolder">Task</p>
           <div>
             <p className="task-text">{task.task}</p>
@@ -222,7 +222,7 @@ function Task(props) {
             <p className="task-code-text ml-3 my-auto">{task.sampleOutput}</p>
           </div>
         </div>
-        <div className="p-4 col-md-4 " style={{overflowX:'hidden'}}>
+        <div className="p-4 col-10 col-md-4 " style={{overflowX:'hidden'}}>
           <div className="row time-bar">
           <p className="ml-2">Time Left</p>
           <p className="ml-auto mr-3" style={{color:"black"}}>  <Countdown date={Date.now() + 900000} renderer={renderer}/></p>
@@ -245,7 +245,7 @@ function Task(props) {
         </div>
       </div>
       <div className="mt-5">
-        <div className="ml-4 row col-md-8">
+        <div className="ml-4 row col-10 col-md-8">
           <p className="font-weight-bold">Enter Your Code Here </p>
           <p className="ml-auto text-success font-weight-bolder">{challenge.language === 'Multiple languages'?(<Form.Control  as="select" name="language" onChange={changeLanguage}  >
       <option  value="python3">Python</option>
@@ -255,15 +255,17 @@ function Task(props) {
     </Form.Control>):challenge.language}</p>
         </div>
 
-        <div className="row ml-5">
+        <div className="row ml-5 mr-3 ">
+          <div className="col-md-8">
           <AceEditor
             mode={language}
             theme="solarized_dark"
             fontSize={20}
             onChange={onChange}
             name="UNIQUE_ID_OF_DIV"
-            height="300px"
-            width="830px"
+            // height="300px"
+            // width="830px"
+            className="editor-crossrank"
             maxLines={10}
             minLines={10}
             showPrintMargin={true}
@@ -274,7 +276,9 @@ function Task(props) {
               enableBasicAutocompletion: true,
               enableSnippets: true,
             }}
+            style={{width:"100%",height:"300px"}}
           />
+        </div>
         </div>
         <div className="ml-5 mt-4">
           <div className="row">
@@ -295,7 +299,7 @@ function Task(props) {
           </div>
 
           <div className="row mt-4">
-            <div className="col-md-8">
+            <div className="col-11 col-md-8">
               <div className="label-box border">
                 <span className="mx-4 font-weight-light">Output</span>
               </div>
