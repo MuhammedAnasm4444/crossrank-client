@@ -79,10 +79,10 @@ function User() {
                 <Navbar />
                 <Login />
                 </Route>
-                <Route path="/challenge/task/">  
+                <ProtectedRoute path="/challenge/task/">  
                     <Navbar />
                     <Task />
-                </Route>
+                </ProtectedRoute>
                 
                 <ProtectedRoute  path='/challenge/:id'   >
                 <Navbar />
@@ -93,10 +93,10 @@ function User() {
                   <Navbar />
                   <Leaderboard />
                 </ProtectedRoute>
-                <Route path="/user-profile/:id">
+                <ProtectedRoute path="/user-profile/:id">
                     <Navbar />
                     <UserProfile />
-                </Route>
+                </ProtectedRoute>
                 <ProtectedRoute path="/user-profile">
                     <Navbar />
                     <UserProfile />
@@ -105,10 +105,10 @@ function User() {
                   <Navbar />
                   <BlogPage />
                 </Route>
-                <Route path='/add-blog'>
+                <ProtectedRoute path='/add-blog'>
                   <Navbar />
                   <AddBlog />
-                </Route>
+                </ProtectedRoute>
                 <Route path='/blog/:id'>
                   <Navbar />
                   <Blog />

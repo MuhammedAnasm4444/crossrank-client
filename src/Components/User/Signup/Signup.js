@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
 import makeToast from '../User/Toaster';
+import ReactLoading from "react-loading";
 import GoogleLogin  from 'react-google-login';
 
 
@@ -40,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn(props) {
   const classes = useStyles();
-  const [signup, setSignup] = useState();
+  const [signup, setSignup] = useState({name:"", email:"",password:"",password2:""});
+  const [loading, setLoading] = useState(false);
   const history = useHistory()
   const handleLogin = async googleData => {
   const res = await fetch("https://ycart.tk/signup/google", {
@@ -62,7 +64,9 @@ export default function SignIn(props) {
   
   function submit (e){
     e.preventDefault()
+    setLoading(true)
     axios.post("https://ycart.tk/signup",signup).then(response => {
+      setLoading(false)
       if(response.data.error) {
       if(response.data.email) makeToast("error", response.data.email)
       if(response.data.password) makeToast("error",response.data.password)
@@ -77,7 +81,8 @@ export default function SignIn(props) {
       }
      
     }).catch((err ) => {
-      console.log(err.response)
+      setLoading(false)
+      console.log(err)
       makeToast("error", "internal server error")
       // if(err.response.data.email) makeToast("error", err.response.data.email)
       // if(err.response.data.password) makeToast("error",err.response.data.password)
@@ -93,6 +98,21 @@ function onChange(e) {
    
 }
   return (
+    <>{
+      loading === true ? (
+        <div className="container">
+        <div className="row  ">
+          <ReactLoading
+            type={"spin"}
+            color={"#03fc4e"}
+            width={150}
+            className="mx-auto loading-icon"
+          />
+        </div>
+        </div>
+      ) :
+      (
+  
  
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -120,6 +140,7 @@ function onChange(e) {
             label="Name"
             type="text"
             name="name"
+            value={signup.name}
             autoComplete="name"
               onChange={onChange}
 
@@ -131,6 +152,7 @@ function onChange(e) {
             required
             fullWidth
             id="email"
+            value={signup.email}
             label="Email Address"
             name="email"
             autoComplete="email"
@@ -140,6 +162,7 @@ function onChange(e) {
           <TextField
             variant="outlined"
             margin="normal"
+            value={signup.password}
             required
             fullWidth
             name="password"
@@ -154,6 +177,7 @@ function onChange(e) {
             margin="normal"
             required
             fullWidth
+            value={signup.password2}
             name="password2"
             label="Confirm Password"
             type="password"
@@ -177,9 +201,9 @@ function onChange(e) {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              {/* <Link href="#" variant="body2">
                 Forgot password?
-              </Link>
+              </Link> */}
             </Grid>
             <Grid item>
               <Link href="/login" variant="body2">
@@ -193,5 +217,8 @@ function onChange(e) {
      
       </Box>
     </Container>
+      )
+      }
+    </>
   );
 }

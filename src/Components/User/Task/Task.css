@@ -81,3 +81,7 @@ select.languages-select:focus > option:checked {
     width: 800px;
     height: 300px;
 }
+
+.loading-icon {
+    margin-top: 18%;
+}
