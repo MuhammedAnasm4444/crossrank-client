@@ -3,7 +3,7 @@ import './Dashboard.css'
 function Footer() {
     return (
         <footer className="footer">
-            <p>Footer</p>
+            <p className="footer-text font-weight-bolder">CrossRank 2021</p>
         </footer>
     )
 }

@@ -50,15 +50,24 @@ export default function SignIn() {
   function submit (e){
     e.preventDefault()
     axios.post('https://ycart.tk/admin/login',login).then(response => {
-      makeToast("success",response.data.message);
-      localStorage.setItem("admin_token", response.data.token)
-      history.push("/admin")
-    }).catch((err ) => {
+      if(response.data.message === "Admin Logged In") {
+        makeToast("success",response.data.message);
+        localStorage.setItem("admin_token", response.data.token)
+        history.push("/admin")
+
+      }
+      else {
+        if(response.data.message) makeToast("error", response.data.message)
+      if(response.data.message) makeToast("error", response.data.message)
+
+      }
      
+    }).catch((err ) => {
+     makeToast("error", "internal server error")
       console.log(err.response)
     
-      if(err.response.data.message) makeToast("error",err.response.data.message)
-      if(err.response.data.message) makeToast("error",err.response.data.message)
+      // if(err.response.data.message) makeToast("error",err.response.data.message)
+      // if(err.response.data.message) makeToast("error",err.response.data.message)
     })
   }
 function onChange(e) {
@@ -89,6 +98,7 @@ function onChange(e) {
             required
             fullWidth
             id="email"
+            type="email"
             label="Email Address"
             name="email"
             autoComplete="email"
@@ -100,6 +110,7 @@ function onChange(e) {
             margin="normal"
             required
             fullWidth
+            type="password"
             name="password"
             label="Password"
             type="password"

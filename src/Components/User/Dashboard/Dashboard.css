@@ -23,7 +23,21 @@
     bottom: 0;
     position: absolute;
     width: 100%;
-    background-color: cornflowerblue;
+    
     color: white;
     text-align: center;
+  }
+  .footer-text {
+   color:cornflowerblue ;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .footer {
+        bottom: 0;
+        position:inherit ;
+        width: 100%;
+        
+        color: white;
+        text-align: center;
+      }
   }
