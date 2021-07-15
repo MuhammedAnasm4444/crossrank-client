@@ -227,7 +227,7 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header data-testid = "nav">
       <AppBar className={header}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>

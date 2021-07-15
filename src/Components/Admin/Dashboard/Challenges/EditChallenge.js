@@ -33,7 +33,7 @@ function EditChallenge() {
       const token = localStorage.getItem("admin_token");
       if (!token) history.push('/admin/login')
       else {
-          axios.get('https://ycart.tk/admin/get-challenge/'+id).then(response =>{
+          axios.get('https://anasmhd.tk/admin/get-challenge/'+id).then(response =>{
               console.log(response.data)
               var data = response.data.challenge
               setChallenge({
@@ -49,7 +49,7 @@ function EditChallenge() {
     },[])
     function submit (e){
       e.preventDefault()
-      axios.post('https://ycart.tk/admin/edit-challenge', challenge).then(response => {
+      axios.post('https://anasmhd.tk/admin/edit-challenge', challenge).then(response => {
         makeToast("success",response.data.message);
         history.push("/admin/challenges")
       }).catch((err ) => {

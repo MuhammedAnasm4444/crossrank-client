@@ -20,7 +20,7 @@ function Dashboard() {
 
   useEffect(() => {
     try {
-      axios.get("https://ycart.tk/admin/challenges").then((res) => {
+      axios.get("https://anasmhd.tk/admin/challenges").then((res) => {
 
         setChallenges(res.data)
       })

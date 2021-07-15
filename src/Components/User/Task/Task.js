@@ -85,7 +85,7 @@ function Task(props) {
     console.log("hai")
     console.log(state)
     axios
-      .get("https://ycart.tk/admin/get-task/?taskId=" + taskId + "&challengeId=" + challengeId)
+      .get("https://anasmhd.tk/admin/get-task/?taskId=" + taskId + "&challengeId=" + challengeId)
       .then((response) => {
         setTasks(response.data.task);
         setChallenge(response.data.challenge);
@@ -129,7 +129,7 @@ function Task(props) {
       point:point,
       status:status
     }
-    axios.post("https://ycart.tk/add-submission", submission)
+    axios.post("https://anasmhd.tk/add-submission", submission)
     .then((response) => {
       console.log(response)
     
@@ -157,7 +157,7 @@ function Task(props) {
       alert("you hadn't written any code");
     } else {
       axios
-        .post("https://ycart.tk/admin/submit-code", output)
+        .post("https://anasmhd.tk/admin/submit-code", output)
         .then((response) => {
           console.log(response);
           setOutputValue(response.data.test);

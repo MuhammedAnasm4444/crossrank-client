@@ -130,7 +130,7 @@ export default function CustomPaginationActionsTable() {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   useEffect(() => {
-    axios.get('https://ycart.tk/leaderboard').then((response) => {
+    axios.get('https://anasmhd.tk/leaderboard').then((response) => {
       console.log(response)
       setRows(response.data)
     })

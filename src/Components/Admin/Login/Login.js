@@ -49,7 +49,7 @@ export default function SignIn() {
   })
   function submit (e){
     e.preventDefault()
-    axios.post('https://ycart.tk/admin/login',login).then(response => {
+    axios.post('https://anasmhd.tk/admin/login',login).then(response => {
       if(response.data.message === "Admin Logged In") {
         makeToast("success",response.data.message);
         localStorage.setItem("admin_token", response.data.token)

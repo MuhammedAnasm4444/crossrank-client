@@ -31,7 +31,7 @@ function Challenge() {
     //   history.push("/");
     // }
     
-    axios.get("https://ycart.tk/admin/get-challenge/" + id).then((res) => {
+    axios.get("https://anasmhd.tk/admin/get-challenge/" + id).then((res) => {
       console.log(res.data);
       setData(res.data);
     });

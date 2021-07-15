@@ -23,7 +23,7 @@ function Dashboard() {
     try {
       console.log("entering fjdkjafk jkjk jaxiosggg")
     
-      axios.get("https://ycart.tk/admin/challenges").then((res) => {
+      axios.get("https://anasmhd.tk/admin/challenges").then((res) => {
         console.log(res.data)
         console.log("dd")
         setChallenges(res.data)

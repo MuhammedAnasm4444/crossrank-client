@@ -50,7 +50,7 @@ function AddTest(props) {
       alert("Please add test case after question submission");
     } else {
       axios
-        .post("https://ycart.tk/admin/add-testCase", {...formData,...test})
+        .post("https://anasmhd.tk/admin/add-testCase", {...formData,...test})
         .then((response) => {
           makeToast("success", "test "+test.count+ " succesfully added");
           setShow(true);

@@ -74,7 +74,7 @@ export default function Basic() {
   const [added, setAdded] = useState([])
   function submit(e){
     e.preventDefault()
-    axios.post('https://ycart.tk/admin/add-task' , task).then(response => {
+    axios.post('https://anasmhd.tk/admin/add-task' , task).then(response => {
       makeToast("success",response.data.message);
       console.log(response.data)
       setTest({

@@ -55,7 +55,7 @@ function AddChallenge() {
     const onSubmit = challenge => {
      
 
-      axios.post('https://ycart.tk/admin/add-challenge', challenge).then(response => {
+      axios.post('https://anasmhd.tk/admin/add-challenge', challenge).then(response => {
         makeToast("success",response.data.message);
         history.push("/admin/challenges")
       }).catch((err ) => {

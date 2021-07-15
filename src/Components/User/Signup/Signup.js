@@ -45,7 +45,7 @@ export default function SignIn(props) {
   const [loading, setLoading] = useState(false);
   const history = useHistory()
   const handleLogin = async googleData => {
-  const res = await fetch("https://ycart.tk/signup/google", {
+  const res = await fetch("https://anasmhd.tk/signup/google", {
       method: "POST",
       body: JSON.stringify({
       token: googleData.tokenId
@@ -65,7 +65,7 @@ export default function SignIn(props) {
   function submit (e){
     e.preventDefault()
     setLoading(true)
-    axios.post("https://ycart.tk/signup",signup).then(response => {
+    axios.post("https://anasmhd.tk/signup",signup).then(response => {
       setLoading(false)
       if(response.data.error) {
       if(response.data.email) makeToast("error", response.data.email)

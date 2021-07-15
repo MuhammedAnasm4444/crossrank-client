@@ -119,7 +119,7 @@ export default function Basic() {
   };
 
   useEffect(() => {
-    axios.get("https://ycart.tk/admin/challenges").then((res) => {
+    axios.get("https://anasmhd.tk/admin/challenges").then((res) => {
       // data = res.data; 
      
      res.data.map((item) => {
@@ -182,7 +182,7 @@ export default function Basic() {
     console.log(datatable)
     console.log(datatable.rows);
     if(window.confirm("are you sure")){
-      axios.get("https://ycart.tk/admin/remove-challenge/" + id).then((response) => {
+      axios.get("https://anasmhd.tk/admin/remove-challenge/" + id).then((response) => {
         setDatatable({
           ...datatable,
           rows: datatable.rows.filter((item) => item._id !== id),

@@ -3,7 +3,7 @@ import './BlogPage.css';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import axios from 'axios';
 import socketIOClient from "socket.io-client";
-const ENDPOINT = "https://ycart.tk";
+const ENDPOINT = "https://anasmhd.tk";
 // const ENDPOINT  = 'http://localhost:8001';
 function CommentBox({blog, user, userId}) {
     const [color, setColor] = useState('skyblue')
@@ -39,7 +39,7 @@ var datetime = "-" + currentdate.getDay() + "/" + currentdate.getMonth()
                  date:datetime
                 
              }
-             axios.post("https://ycart.tk/post-comment",obj).then((response) => {
+             axios.post("https://anasmhd.tk/post-comment",obj).then((response) => {
                  console.log(response.data)
                  
                  setComment({

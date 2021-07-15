@@ -14,7 +14,7 @@ export default function LikeButton({blog}) {
       blog:blog,
       user:state.id
     }
-    axios.post('https://ycart.tk/blog-like',obj).then((response) => {
+    axios.post('https://anasmhd.tk/blog-like',obj).then((response) => {
       console.log(response)
     })
    }
@@ -34,7 +34,7 @@ export default function LikeButton({blog}) {
     
     useEffect(() => {
       console.log("like"+blog)
-      axios.post('https://ycart.tk/check-blog',{user:state.id,blog:blog}).then((response) => {
+      axios.post('https://anasmhd.tk/check-blog',{user:state.id,blog:blog}).then((response) => {
         if(response.data.liked) setColor('yellowgreen')
       })
     },[])

@@ -54,7 +54,7 @@ function UserProfile() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", image.raw);
-   axios.post("https://ycart.tk/upload-user-profile", formData)
+   axios.post("https://anasmhd.tk/upload-user-profile", formData)
    .then((response) => {
 
    })
@@ -98,7 +98,7 @@ function UserProfile() {
  
 
   useEffect(() =>{
-    axios.get('https://ycart.tk/user-profile/'+state.id).
+    axios.get('https://anasmhd.tk/user-profile/'+state.id).
     then((response) =>{
      console.log(response.data.submissions)
      console.log(response.data.user)
