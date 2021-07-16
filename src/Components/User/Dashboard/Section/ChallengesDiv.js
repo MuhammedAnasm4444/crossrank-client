@@ -44,7 +44,7 @@ export default function FeaturedPost(props) {
       <CardActionArea  >
         <Card className={`m-3 ${classes.card}`}   >
           <div className={` row ${classes.cardDetails}`}>
-            <CardContent className="">
+            <CardContent className="challengeCard">
               <Typography component="h2" variant="h5">
                 {/* {post.title} */}
                 <Box fontWeight="fontWeightBold" >
