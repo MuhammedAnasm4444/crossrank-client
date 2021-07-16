@@ -8,6 +8,9 @@
     box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
 
 }
+.challengeCard{
+    margin-left: 20px;
+}
 
 .card-div :hover {
     background: rgb(227, 240, 227);
